@@ -34,12 +34,8 @@
 
             <div class="text-center leading-normal px-4">
                 <h1 class="text-xl mt-2 md:mt-0">{{ .Site.Title }}</h1>
-                {{ $rssLink := "" }}
-                {{ with $.Site.Home.OutputFormats.Get "rss" }}
-                {{ $rssLink = .Permalink }}
-                {{ end }}
                 {{ with .Site.Params.description_header }}
-                <p class="text-sm mt-2">{{ printf . $rssLink | safeHTML }}</p>
+                <p class="text-sm mt-2">{{ printf . | safeHTML }}</p>
                 {{ end }}
             </div>
 
